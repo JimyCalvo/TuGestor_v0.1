@@ -13,19 +13,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::middleware(['role: 1'])->group(function () {
-        Route::get('/employee-home',  [HomeController::class, 'employeeHome'])->name('employee.home');
+        Route::get('/employee/home',  [HomeController::class, 'employeeHome'])->name('employee.home');
 
     });
     Route::middleware(['role: 2'])->group(function () {
-        Route::get('/home-supervisor',  [HomeController::class, 'supervisorHome'])->name('supervisor.home');
+        Route::get('/supervisor/home',  [HomeController::class, 'supervisorHome'])->name('supervisor.home');
 
     });
     Route::middleware(['role: 3'])->group(function () {
-        Route::get('/home-admin',  [HomeController::class, 'adminHome'])->name('admin.home');
+        Route::get('/admin/home',  [HomeController::class, 'adminHome'])->name('admin.home');
 
     });
     Route::middleware(['role: 4'])->group(function () {
-        Route::get('/home-super_admin',  [HomeController::class, 'superAdminHome'])->name('super-admin.home');
+        Route::get('/super_admin/home',  [HomeController::class, 'superAdminHome'])->name('super-admin.home');
 
     });
 
